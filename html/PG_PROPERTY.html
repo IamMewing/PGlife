@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BEST PG's in Hyderabad | PG Life</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="../css/PG PROPERTY.css">
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="../html/index.html"><img src="../img/logo.png" alt="logo" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal"><i class="fas fa-user-plus mr-1"></i>Sign Up</a>
+                </li>
+                <li class="nav-item">
+                  <span class="mx-2 d-none d-md-block vertical-line"></span> <!-- Vertical line for desktop -->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt mr-1"></i>Login</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+         <!-----login modal--->
+         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <div class="form-group">
+                              <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                              <label for="password"><i class="fas fa-lock"></i> Password</label>
+                              <input type="password" class="form-control" id="password" placeholder="Password">
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="showLoginSuccessModal()">Login</button>
+                  </div>
+                  <div class="modal-footer">
+                      <p>Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Click here to register a new account</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-----signup modal----->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="college"><i class="fas fa-university"></i> College Name</label>
+                    <input type="text" class="form-control" id="college" placeholder="Enter college name">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="showSignupSuccessModal()">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <p>Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login here.</a></p>
+        </div>
+    </div>
+</div>
+</div>
+
+        <!-----signup success-->
+        <div class="modal fade" id="signupSuccessModal" tabindex="-1" role="dialog" aria-labelledby="signupSuccessModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="signupSuccessModalLabel">Success</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body text-center">
+                      <i class="fas fa-check-circle fa-3x text-success"></i>
+                      <h4 class="mt-3">You have successfully signed up!</h4>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+       <!----login success modal---->
+  <div class="modal fade" id="loginSuccessModal" tabindex="-1" role="dialog" aria-labelledby="loginSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginSuccessModalLabel">Login Success</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>You have successfully logged in!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+            <!----breadcrumb----->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb py-2">
+            <li class="breadcrumb-item">
+                <a href="../html/index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              PGs in your city
+            </li>
+             </ol>
+           </nav>
+           
+            
+            <!-----filter---->
+            <div class="container mt-5" id="filter1">
+                <div class="row justify-content-center">
+                  <!-- Filter Modal -->
+                  <div class="col-lg-4 col-md-6 col-sm-8">
+                    <button type="button" class="btn btn-block" data-toggle="modal" data-target="#filterModal">
+                      <i class="fas fa-filter"></i> Filter
+                    </button>
+                  </div>
+                  <!-- Highest Rent First Button -->
+                  <div class="col-lg-4 col-md-6 col-sm-8 mt-3 mt-md-0">
+                    <button type="button" class="btn btn-block">
+                      <i class="fas fa-arrow-up"></i>&nbsp;Highest Rent First
+                    </button>
+                  </div>
+                  <!-- Lowest Rent First Button -->
+                  <div class="col-lg-4 col-md-6 col-sm-8 mt-3 mt-md-0">
+                    <button type="button" class="btn btn-block">
+                      <i class="fas fa-arrow-down"></i>&nbsp;Lowest Rent First
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <!-- Filter Modal -->
+              <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="filterModalLabel">Filters</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h2>Gender</h2>
+                      <div class="row">
+                        <div class="col-md-4 mb-2">
+                          <button type="button" class="btn btn-danger btn-block btn-icon ">
+                              <i class="fas fa-venus-mars"></i> Unisex
+                          </button>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <button type="button" class="btn btn-primary btn-block btn-icon">
+                            <i class="fas fa-mars"></i> Male
+                          </button>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <button type="button" class="btn btn-success btn-block btn-icon">
+                            <i class="fas fa-venus"></i> Female
+                          </button>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <button type="button" class="btn btn-secondary btn-block btn-icon">
+                             No Filter
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Okay</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
+            <!------cards------>
+            
+            <div class="cards">
+                <div class="container mt-5">
+                <div class="card position-relative">
+                  <div class="row no-gutters">
+                    <!-- Left Column -->
+                    <div class="col-md-4">
+                      <img src="../img/properties/1/46ebbb537aa9fb0a.jpg" class="card-img" alt="Image">
+                      <i class="far fa-heart heart-icon"></i>
+                    </div>
+                    <!-- Middle Column -->
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <div class="rating">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star-half-alt"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="card-text">Ganpati Paying Guest</p>
+                            <p class="card-text">8-2-603/B/33/A/5Gouri Shankar Nagar Colony, 500873 · 097001 04814</p>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <i class="fas fa-male"></i>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="price">₹4500 <i>(per month)</i></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Column -->
+                    <div class="col-md-4">
+                      <div class="card-body d-flex flex-column justify-content-between h-100">
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <a href="./PG PROPERTY DETAIL.html"><button class="btn btn-primary">View</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--------card2--->
+              <div class="container mt-5">
+                <div class="card position-relative">
+                  <div class="row no-gutters">
+                    <!-- Left Column -->
+                    <div class="col-md-4">
+                      <img src="../img/properties/2/45109c3e5c063d21.jpg" class="card-img" alt="Image">
+                      <i class="far fa-heart heart-icon"></i>
+                    </div>
+                    <!-- Middle Column -->
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <div class="rating">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="card-text">Navkar Paying Guest</p>
+                            <p class="card-text">Banjara Hills Rd Number 5, behind TV9, Banjara Hills</p>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <i class="fas fa-male"></i>
+                            <i class="fas fa-female"></i>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="price">₹5000 <i>(per month)</i></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Column -->
+                    <div class="col-md-4">
+                      <div class="card-body d-flex flex-column justify-content-between h-100">
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <a href="./PG PROPERTY DETAIL.html"><button class="btn btn-primary">View</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-----card3-->
+              <div class="container mt-5">
+                <div class="card position-relative">
+                  <div class="row no-gutters">
+                    <!-- Left Column -->
+                    <div class="col-md-4">
+                      <img src="../img/properties/14/1d4f0757fdb86d5f.jpg" class="card-img" alt="Image">
+                      <i class="far fa-heart heart-icon"></i>
+                    </div>
+                    <!-- Middle Column -->
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <div class="rating">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star-half-alt"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="card-text">PG for Girls Banjara Hills</p>
+                            <p class="card-text">Plot No 125, Banjara Hills Rd Number 3, Green Valley, Banjara Hills</p>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <i class="fas fa-female"></i>
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+                          <div class="col">
+                            <p class="price">₹5000 <i>(per month)</i></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Column -->
+                    <div class="col-md-4">
+                      <div class="card-body d-flex flex-column justify-content-between h-100">
+                        <div class="row justify-content-end">
+                          <div class="col-auto">
+                            <a href="./PG PROPERTY DETAIL.html"><button class="btn btn-primary">View</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!---footer---->
+<div class="foot">
+              <div class="container" id="footrow">
+                <div class="row justify-content-center">
+                  <div class="col-md-2 col-sm-4 col-6">
+                    <a href="PG_PROPERTY.php?city=delhi" class="footer-link">PG's in Delhi</a>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-6">
+                    <a href="PG_PROPERTY.php?city=bangalore" class="footer-link">PG's in Bangalore</a>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-6">
+                    <a href="PG_PROPERTY.php?city=hyderabad" class="footer-link">PG's in Hyderabad</a>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-6">
+                    <a href="PG_PROPERTY.php?city=mumbai" class="footer-link">PG's in Mumbai</a>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-6">
+                    <a href="PG_PROPERTY.php?city=chennai" class="footer-link">PG's in Chennai</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="footer2" style="background-color: rgb(54, 54, 54); padding-bottom: 5px;">
+              <p style="color: rgb(121, 121, 121); text-align: center;">&#169;Copyright PG Life 2024</p>
+            </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>function showSignupSuccessModal() {
+      $('#signupModal').modal('hide');
+      $('#signupSuccessModal').modal('show');
+  }
+  </script>
+  <script>
+    function showLoginSuccessModal() {
+        $('#loginModal').modal('hide');
+        $('#loginSuccessModal').modal('show');
+    }
+</script>
+            
+
+    </body>
+    </html>
